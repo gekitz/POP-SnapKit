@@ -14,7 +14,7 @@ import SnapKit
 public extension Constraint {
     public var layoutConstraint: NSLayoutConstraint? {
         return layoutConstraints?.flatMap {
-            guard let constraint = _valueForKey("snp_constraint", $0) as? Constraint where constraint === self else { return nil }
+            guard let constraint = _valueForKey("snp_constraint", $0) as? Constraint, constraint === self else { return nil }
             return $0
         }.first
     }
@@ -25,7 +25,7 @@ public extension Constraint {
     }
 }
 
-private func _valueForKey(key: String, _ fromObject: AnyObject) -> AnyObject? {
-    let ivar = class_getInstanceVariable(fromObject.dynamicType, key)
-    return object_getIvar(fromObject, ivar)
+private func _valueForKey(_ key: String, _ fromObject: AnyObject) -> AnyObject? {
+    let ivar = class_getInstanceVariable(type(of: fromObject), key)
+    return object_getIvar(fromObject, ivar) as AnyObject?
 }
