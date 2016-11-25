@@ -38,4 +38,4 @@ self.radiusConstaint?.layoutConstraint?.pop_addAnimation(spring, forKey: "someKe
 
 ## Dependencies
 - [pop](https://github.com/facebook/pop) (1.0.9) - An extensible iOS and OS X animation library, useful for physics-based interactions.
-- [SnapKit](https://github.com/SnapKit/SnapKit) (0.21.1) - A Swift Autolayout DSL for iOS & OS X
+- [SnapKit](https://github.com/SnapKit/SnapKit) (3.0.2) - A Swift Autolayout DSL for iOS & OS X
